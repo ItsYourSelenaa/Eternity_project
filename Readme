@@ -1,1 +1,23 @@
-comming soon
+# ♾️ Eternity Project
+
+> *"Bringing Immortality to Legends."*
+
+## 📱 Supported Devices
+* **Xiaomi Poco F1 (beryllium)** - The Master of Speed
+
+## 🛠️ Build Ingredients (Hasil Fork Jalur Ninja)
+Bahan-bahan yang sudah siap di dapur kami:
+* **Kernel**: SDM845
+* **Device Tree**: Beryllium optimized
+* **Vendor**: Proprietary blobs from TheMuppets
+
+## 👨‍💻 Current Status
+* [✅] Fork semua repo 
+* [✅] Skrol grup IMPHNEN
+* [⌛] Build di Google Colab (Coming Soon / Malaz)
+
+## ⚡ Credits & Thanks
+* **LineageOS** (For the base)
+* **TheMuppets** (For the vendor blobs)
+* **Grup IMPHNEN** (For the motivation to stay lazy)
+
