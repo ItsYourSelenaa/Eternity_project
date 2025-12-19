@@ -1,24 +1,28 @@
-name: Eternity Project Build (Poco F1)
+name: Eternity Project Build
 
 on:
-  workflow_dispatch: # Biar bisa diklik manual sambil skrol fesnuk
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Pakai spek terbaru
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Install Tools Perang
+    - name: Kirim Notif Mulai
       run: |
-        sudo apt-get update
-        sudo apt-get install -y bc build-essential zip curl python3 git-core gnupg flex bison gperf libxml2-utils
+        curl -s "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TG_CHAT_ID }}" \
+        -d text="🚀 Wir, Eternity Project buat Poco F1 (beryllium) mulai dibangun! Silakan lanjut skrol imphnen, nanti dikabari lagi kalau kelar. 😎"
 
-    - name: Ritual Build Eternity
+    - name: Setup Lingkungan & Build
       run: |
-        echo "Sedang membangun masa depan yang abadi..."
-        # Di sini nanti kita masukkan perintah 'repo sync' dan 'brunch'
-        # Untuk tes awal, kita biarkan dia jalanin perintah ringan dulu
-        sleep 10
-        echo "Build Sukses (Simulasi)!"
+        # Di sini nanti kita pasang script sync & build yang beneran
+        # Sementara kita simulasiin proses berat 1 menit
+        echo "Lagi narik source code..."
+        sleep 60 
+
+    - name: Kirim Hasil Build
+      run: |
+        curl -s "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TG_CHAT_ID }}" \
+        -d text="✅ Build SELESAI, Wir! Link download bakal muncul di tab Actions GitHub kamu. Selamat flashing! 😹"
+        
