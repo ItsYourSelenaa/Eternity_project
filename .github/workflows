@@ -1,0 +1,24 @@
+name: Eternity Project Build (Poco F1)
+
+on:
+  workflow_dispatch: # Biar bisa diklik manual sambil skrol fesnuk
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Tools Perang
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y bc build-essential zip curl python3 git-core gnupg flex bison gperf libxml2-utils
+
+    - name: Ritual Build Eternity
+      run: |
+        echo "Sedang membangun masa depan yang abadi..."
+        # Di sini nanti kita masukkan perintah 'repo sync' dan 'brunch'
+        # Untuk tes awal, kita biarkan dia jalanin perintah ringan dulu
+        sleep 10
+        echo "Build Sukses (Simulasi)!"
