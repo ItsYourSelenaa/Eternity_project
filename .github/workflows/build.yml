@@ -5,11 +5,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 # Pakai spek terbaru
+    runs-on: ubuntu-22.04 
     steps:
     - name: Kirim Notif Mulai
       run: |
-        curl -s "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" \
+        curl -s "https://api.telegram.org/bot${{ secrets.8536809781:AAEzX5PMEkJIbz6XxYG6gNc5tupfu0YNabo }}/sendMessage" \
         -d chat_id="${{ secrets.TG_CHAT_ID }}" \
         -d text="🚀 Wir, Eternity Project buat Poco F1 (beryllium) mulai dibangun! Silakan lanjut skrol imphnen, nanti dikabari lagi kalau kelar. 😎"
 
