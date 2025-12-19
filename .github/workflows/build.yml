@@ -1,28 +1,22 @@
-name: Eternity Project Build
+name: Eternity Project Test
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Tombol manual
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04 
+  test_build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Kirim Notif Mulai
-      run: |
-        curl -s "https://api.telegram.org/bot${{ secrets.8536809781:AAEzX5PMEkJIbz6XxYG6gNc5tupfu0YNabo }}/sendMessage" \
-        -d chat_id="${{ secrets.TG_CHAT_ID }}" \
-        -d text="🚀 Wir, Eternity Project buat Poco F1 (beryllium) mulai dibangun! Silakan lanjut skrol imphnen, nanti dikabari lagi kalau kelar. 😎"
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-    - name: Setup Lingkungan & Build
-      run: |
-        # Di sini nanti kita pasang script sync & build yang beneran
-        # Sementara kita simulasiin proses berat 1 menit
-        echo "Lagi narik source code..."
-        sleep 60 
+      - name: Cek Spek Server
+        run: |
+          echo "Halo Wir! Eternity Project lagi ngetes server..."
+          nproc
+          free -h
+          df -h
 
-    - name: Kirim Hasil Build
-      run: |
-        curl -s "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" \
-        -d chat_id="${{ secrets.TG_CHAT_ID }}" \
-        -d text="✅ Build SELESAI, Wir! Link download bakal muncul di tab Actions GitHub kamu. Selamat flashing! 😹"
+      - name: Selesai
+        run: echo "Test Berhasil! Server siap tempur, Wir. 😎"
         
