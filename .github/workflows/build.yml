@@ -1,7 +1,7 @@
 name: Eternity Project Build
 
 on:
-  workflow_dispatch: # Tombol manual
+  workflow_dispatch:
 
 jobs:
   build_job:
